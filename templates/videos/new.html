@@ -14,23 +14,23 @@
 
         <div>
             <label for="description">Description:</label>
-                <textarea name="description" rows="2" cols="30"></textarea>
-            </div>
-          
-            <div>
-              <label for="stock_quantity">Stock Quantity:</label>
-              <input type="number" id="stock_quantity" name="stock_quantity" value="{{video.stock_quantity}}" required>
-            </div>
-          
-            <div>
-              <label for="buying_cost">Buying Cost:</label>
-              <input type="number" id="buying_cost" name="buying_cost" value="{{video.buying_cost}}" required>
-            </div>
-          
-            <div>
-              <label for="selling_price">Selling Price:</label>
-              <input type="number" id="selling_price" name="selling_price" value="{{video.selling_price}}" required>
-            </div>
+            <input type="text" id="description" name="description" placeholder="Description" required autofocus>
+        </div>
+        
+        <div>
+            <label for="stock_quantity">Stock Quantity:</label>
+            <input type="number" id="stock_quantity" name="stock_quantity" value="{{video.stock_quantity}}" required>
+        </div>
+        
+        <div>
+            <label for="buying_cost">Buying Cost:</label>
+            <input type="number" id="buying_cost" name="buying_cost" value="{{video.buying_cost}}" required>
+        </div>
+        
+        <div>
+            <label for="selling_price">Selling Price:</label>
+            <input type="number" id="selling_price" name="selling_price" value="{{video.selling_price}}" required>
+        </div>
     
         <div>
             <label for="director">director:</label>
