@@ -5,8 +5,8 @@ from models.video import Video
 
 
 def save(director):
-    sql = "INSERT INTO directors (name, contact_number, activity) VALUES (%s, %s, %s) RETURNING *"
-    values = [director.name, director.contact_number, director.activity]
+    sql = "INSERT INTO directors (name, contact_number) VALUES (%s, %s) RETURNING *"
+    values = [director.name, director.contact_number]
     results = run_sql(sql, values)
     id = results[0]['id']
     director.id = id
@@ -20,7 +20,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        director = Director(row['name'], row['contact_number'], row['activity'], row['id'] )
+        director = Director(row['name'], row['contact_number'], row['id'] )
         directors.append(director)
     return directors
 
@@ -32,7 +32,7 @@ def select(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        director = Director(result['name'], result['contact_number'], result['activity'], result['id'] )
+        director = Director(result['name'], result['contact_number'], result['id'] )
     return director
 
 

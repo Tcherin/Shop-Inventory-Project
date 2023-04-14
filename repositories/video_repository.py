@@ -6,7 +6,7 @@ import repositories.director_repository as director_repository
 
 
 def save(video):
-    sql = "INSERT INTO videos (title, genre, description, stock_quantity, buying_cost, selling_price, director_id) VALUES (%s, %s, %s, %s, %s, %s) RETURNING *"
+    sql = "INSERT INTO videos (title, genre, description, stock_quantity, buying_cost, selling_price, director_id) VALUES (%s, %s, %s, %s, %s, %s, %s) RETURNING *"
     values = [video.title, video.genre, video.description, video.stock_quantity, video.buying_cost, video.selling_price, video.director.id]
     results = run_sql(sql, values)
     id = results[0]['id']
