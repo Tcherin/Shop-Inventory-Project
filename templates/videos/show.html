@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div>
+    <p>{{video.title}}</p>
+    <hr>
+    <p>{{video.director.name}}</p>
+    <p>{{video.genre}}</p>
+    <p><a href="/videos/{{video.id}}/edit">Edit</a></p>
+  </div>
+{% endblock content %}

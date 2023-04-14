@@ -10,9 +10,10 @@ director_repository.delete_all()
 
 director1 = Director("Steven Spielberg", "0776494323")
 director_repository.save(director1)
-
 director2 = Director("Christopher Nolan", "0774356323")
 director_repository.save(director2)
+director3 = Director("Stanley Kubrick", "0774593827")
+director_repository.save(director3)
 
 director_repository.select_all()
 
@@ -24,6 +25,9 @@ video_3 = Video("Titanic", "Romance", "Everyone enjoys an ice-bucket challenge",
 video_repository.save(video_3)
 video_4 = Video("Inception", "Thriller", "Just sleeping basically", 8, 2, 5, director2)
 video_repository.save(video_4)
+video_5 = Video("The Shining", "Horror", "Airbnb gone wrong.", 13, 2, 5, director3)
+video_repository.save(video_5)
+video_6 = video()
 
 
 
