@@ -1,16 +1,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    {% for book in all_books %}
-            <div class="book">
+    {% for video in all_videos %}
+            <div class="video">
                 <div class="content">
-                    {{ book.author.full_name }}
                     <div class="title">
-                        <a href="/books/{{book.id}}"">{{ book.title }}</a>
-                        <span class="genre">{{ book.genre }}</span>
+                        <p>{{video.title}}</p>
+                        <p>"{{video.description}}"</p>
+                        <a href="/videos/{{video.id}}"> View Full Details</a>
                     </div>
                     <div class="buttons">
-                        <form class="delete-form" action="/books/{{ book.id }}/delete" method="post">
+                        <form class="delete-form" action="/videos/{{ video.id }}/delete" method="post">
                             <button class="trash-button">
                                 <i class="fa fa-trash-o fa-3x" style="color: red" aria-hidden="true"></i>
                             </button>

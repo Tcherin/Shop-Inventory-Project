@@ -13,7 +13,7 @@ def videos():
 @videos_blueprint.route("/videos/new")
 def new_video():
     directors = director_repository.select_all()
-    return render_template("videos/new.html", all_directors = directors)
+    return render_template("videos/new.html", all_directors=directors)
 
 
 @videos_blueprint.route("/videos", methods=['POST'])
@@ -27,7 +27,7 @@ def create_video():
     director_id = request.form['director_id']
 
     director = director_repository.select(director_id)
-    video = video(title, genre, description, stock_quantity, buying_cost, selling_price, director)
+    video = Video(title, genre, description, stock_quantity, buying_cost, selling_price, director)
     video_repository.save(video)
 
     return redirect('/videos')
@@ -57,7 +57,7 @@ def update_video(id):
     director_id = request.form['director_id']
 
     director = director_repository.select(director_id)
-    video = video(title, genre, description, stock_quantity, buying_cost, selling_price, director, id)
+    video = Video(title, genre, description, stock_quantity, buying_cost, selling_price, director, id)
     video_repository.update(video)
     return redirect('/videos')
 

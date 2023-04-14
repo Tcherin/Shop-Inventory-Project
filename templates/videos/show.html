@@ -4,8 +4,12 @@
   <div>
     <p>{{video.title}}</p>
     <hr>
-    <p>{{video.director.name}}</p>
-    <p>{{video.genre}}</p>
+    <p>Director: {{video.director.name}}</p>
+    <p>Genre: {{video.genre}}</p>
+    <p>Description: {{video.description}}</p>
+    <p>Stock Quantity: {{video.stock_quantity}}</p>
+    <p>Buying cost: {{video.buying_cost}}</p>
+    <p>Selling Price: {{video.selling_price}}</p>
     <p><a href="/videos/{{video.id}}/edit">Edit</a></p>
   </div>
 {% endblock content %}

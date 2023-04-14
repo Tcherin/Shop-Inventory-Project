@@ -1,29 +1,47 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <form action="/books" method="post">
+    <form action="/videos" method="post">
         <div>
-        <label for="title">Title:</label>
-        <input type="text" id="title" name="title" placeholder="title" required autofocus>
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" placeholder="title" required autofocus>
         </div>
     
         <div>
-        <label for="genre">Genre:</label>
-        <input type="text" id="genre" name="genre" placeholder="genre" required>
+            <label for="genre">Genre:</label>
+            <input type="text" id="genre" name="genre" placeholder="genre" required>
         </div>
 
-        
+        <div>
+            <label for="description">Description:</label>
+                <textarea name="description" rows="2" cols="30"></textarea>
+            </div>
+          
+            <div>
+              <label for="stock_quantity">Stock Quantity:</label>
+              <input type="number" id="stock_quantity" name="stock_quantity" value="{{video.stock_quantity}}" required>
+            </div>
+          
+            <div>
+              <label for="buying_cost">Buying Cost:</label>
+              <input type="number" id="buying_cost" name="buying_cost" value="{{video.buying_cost}}" required>
+            </div>
+          
+            <div>
+              <label for="selling_price">Selling Price:</label>
+              <input type="number" id="selling_price" name="selling_price" value="{{video.selling_price}}" required>
+            </div>
     
         <div>
-        <label for="author">author:</label>
-        <select id="author" name="author_id">
-            {% for author in all_authors %}
-                <option value="{{ author.id }}">{{ author.full_name }}</option>
-            {% endfor %}
-        </select>
+            <label for="director">director:</label>
+            <select id="director" name="director_id">
+                {% for director in all_directors %}
+                    <option value="{{ director.id }}">{{ director.name }}</option>
+                {% endfor %}
+            </select>
         </div>
     
-        <button type="submit">Add book</button>
+        <button type="submit">Add Video</button>
     
     </form>
 {% endblock content %}

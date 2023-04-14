@@ -27,7 +27,6 @@ video_4 = Video("Inception", "Thriller", "Just sleeping basically", 8, 2, 5, dir
 video_repository.save(video_4)
 video_5 = Video("The Shining", "Horror", "Airbnb gone wrong.", 13, 2, 5, director3)
 video_repository.save(video_5)
-video_6 = video()
 
 
 
