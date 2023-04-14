@@ -1,19 +1,20 @@
-DROP TABLE IF EXISTS books;
-DROP TABLE IF EXISTS wholesalers;
+DROP TABLE IF EXISTS films;
+DROP TABLE IF EXISTS directors;
 
-CREATE TABLE wholesalers (
+CREATE TABLE directors (
   id SERIAL PRIMARY KEY,
   name VARCHAR(255),
   contact_number INT,
   activity BOOLEAN
 );
 
-CREATE TABLE books (
+CREATE TABLE films (
   id SERIAL PRIMARY KEY,
   title VARCHAR(255),
   genre VARCHAR(255),
+  description TEXT,
   stock_quanitity INT,
   buying_cost INT,
   selling_price INT,
-  wholesaler_id INT NOT NULL REFERENCES wholesalers(id)
+  director_id INT NOT NULL REFERENCES directors(id)
 );
