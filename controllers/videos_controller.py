@@ -38,7 +38,6 @@ def show_video(id):
     video = video_repository.select(id)
     return render_template("videos/show.html", video=video)
 
-
 @videos_blueprint.route("/videos/<id>/edit")
 def edit_video(id):
     video = video_repository.select(id)

@@ -2,6 +2,7 @@ from db.run_sql import run_sql
 
 from models.director import Director
 from models.video import Video
+import repositories.video_repository as video_repository
 
 
 def save(director):
@@ -32,7 +33,7 @@ def select(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        director = Director(result['name'], result['contact_number'], result['id'] )
+        director = Director(result['name'], result['contact_number'],  result['id'] )
     return director
 
 
@@ -49,7 +50,7 @@ def delete(id):
 
 def update(director):
     sql = "UPDATE directors SET name = %s WHERE id = %s"
-    values = [director.name, director.id]
+    values = [director.name, director.contact_number, director.id]
     run_sql(sql, values)
 
 def videos(director):

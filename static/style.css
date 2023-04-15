@@ -1,0 +1,93 @@
+/* Home Page */
+
+body {
+    background-color: silver;
+}
+
+header {
+    
+    margin: 10px;
+    background-color: #4584b1;
+    color: #fff;
+    font-size: 1rem;
+  }
+
+header > div > h1 {
+    margin: 20px;
+    height: 12rem;
+    font-size: 5rem;
+    background-color: salmon;
+    display: flex;
+    justify-content: center;
+}
+
+header > div > h2 {
+    margin: 20px;
+    font-size: 3rem;
+    background-color: salmon;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.menu {
+    margin: 10px;
+    height: 1rem;
+    background-color:#4584b1;
+    color: #fff;
+    gap: 20px;
+    font-size: 1rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.menu > nav > a {
+    color: #fff;
+}
+
+.instructions {
+    margin: 10px;
+    height: 25rem;
+    font-size: 20px;
+    background-color: #4584b1;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+}
+
+.instructions > h3 {
+    margin: 20px;
+    width: 40rem;
+    background-color: salmon;
+    display: flex;
+    text-align: center;
+}
+
+.instructions > p {
+    margin: 30px;
+    background-color: salmon;
+    display: flex;
+    text-align: center;
+}
+
+footer {
+    margin: 10px;
+    height: 1rem;
+    background-color: #4584b1;
+}
+
+/* index page */
+
+.video {
+    color: #fff;
+    background-color: #4584b1;
+}
+
+.title {
+    margin: 20px;
+    background-color: salmon;
+    width: 15rem;
+}
+
+.trash-button {
+    margin: 10px;
+}
