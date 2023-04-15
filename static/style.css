@@ -78,14 +78,17 @@ footer {
 /* index page */
 
 .video {
+    margin: 10px;
     color: #fff;
     background-color: #4584b1;
+    width: 20rem;
 }
 
 .title {
-    margin: 20px;
-    background-color: salmon;
+    margin: 30px;
     width: 15rem;
+    display: grid;
+    align-items: center;
 }
 
 .trash-button {
