@@ -7,7 +7,13 @@
     <p>Director: {{video.director.name}}</p>
     <p>Genre: {{video.genre}}</p>
     <p>Description: {{video.description}}</p>
-    <p>Stock Quantity: {{video.stock_quantity}}</p>
+      {% if video.stock_quantity >= 5 %}
+        <p> Stock Quantity: {{video.stock_quantity}} </p>
+      {% elif video.stock_quantity <= 4 and video.stock_quantity != 0 %}
+        <p> Stock Quantity: {{video.stock_quantity}} (Low Stock) </p>
+      {% elif video.stock_quantity == 0 %}
+        <p> Stock Quantity: {{video.stock_quantity}} (Out of Stock) </p>
+    {% endif %}
     <p>Buying cost: {{video.buying_cost}}</p>
     <p>Selling Price: {{video.selling_price}}</p>
     <p><a href="/videos/{{video.id}}/edit">Edit</a></p>
