@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form action="/directors/{{director.id}}" method="post">
+  <section id="edit"></section>
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="title" value="{{director.name}}" required autofocus>
+    </div>
+
+    <div>
+      <label for="contact_number">Contact number:</label>
+      <input type="text" id="contact_number" name="contact_number" value="{{director.contact_number}}" required>
+    </div>
+
+    <!-- <div>
+      <label for="director">director:</label>
+      <select id="director" name="director_id">
+        {% for director in all_directors %}
+          <option value="{{ director.id }}"
+            {% if video.director.id== director.id %} selected="selected"{% endif %}>
+            {{ director.name }}
+          </option>
+        {% endfor %}
+      </select>
+    </div> -->
+
+    <button type="submit">Update video</button>
+  </section>
+</form>
+
+{% endblock %}

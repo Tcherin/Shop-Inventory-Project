@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for director in all_directors %}
+            <div class="video">
+                <div class="content">
+                    <div class="title">
+                        <p>{{director.name}}</p>
+                        <p>"{{director.contact_number}}"</p>
+                    </div>
+                    <div class="buttons">
+                        <form class="delete-form" action="/directors/{{ director.id }}/delete" method="post">
+                            <button class="trash-button">
+                                <i class="fa fa-trash-o fa-3x" style="color: red" aria-hidden="true"></i>
+                            </button>
+                            <a href="/directors/{{director.id}}"> View Full Details</a>
+                        </form>
+                    </div>
+                </div>
+            </div> 
+    {% endfor %}
+{% endblock content %}

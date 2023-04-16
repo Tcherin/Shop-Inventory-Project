@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form action="/directors" method="post">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="name" required autofocus>
+        </div>
+        <div>
+            <label for="contact_number">Contact Number:</label>
+            <input type="text" id="contact_number" name="contact_number" placeholder="contact_number" required>
+        </div>
+    
+        <button type="submit">Add Director</button>
+    
+    </form>
+{% endblock content %}

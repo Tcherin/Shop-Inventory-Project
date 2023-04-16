@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div id="show">
+    <p>Name: {{director.name}}</p>
+    <p>Genre: {{director.contact_number}}</p>
+    <p><a href="/directors/{{director.id}}/edit">Edit</a></p>
+  </div>
+{% endblock content %}
