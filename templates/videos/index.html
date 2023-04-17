@@ -1,15 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    
+
             <header>
                 <h1>
                     Inventory List
                 </h1>
             </header>
-            <section>
-                <li><a href="/videos/director/<int:id>">Search by Director</a></li>
-            </section>
+            <form action="/filtervideos" method="post">
+                <input name="video_name" type="text">
+                <input type="submit">
+            
+            </form>
 {% for video in all_videos %}
             <div class="video">
                 <div class="content">

@@ -15,6 +15,19 @@ def directors():
 def new_director():
     return render_template("directors/new.html")
 
+@directors_blueprint.route("/filterdirectors", methods=['POST'])
+def filter_by_directors():
+    search_term = request.form['director_name']
+    all_directors = director_repository.select_all()
+    found_directors = []
+    for director in all_directors:
+        if search_term in director.name:
+            found_directors.append(director)
+    return render_template("directors/index.html", all_directors=found_directors)
+
+
+
+
 
 @directors_blueprint.route("/directors", methods=['POST'])
 def create_director():

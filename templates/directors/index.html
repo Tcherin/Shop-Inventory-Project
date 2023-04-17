@@ -1,6 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
+<form action="/filterdirectors" method="post">
+    <input name="director_name" type="text">
+    <input type="submit">
+
+</form>
     {% for director in all_directors %}
             <div class="video">
                 <div class="content">

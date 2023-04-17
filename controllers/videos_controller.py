@@ -66,7 +66,9 @@ def delete_video(id):
     video_repository.delete(id)
     return redirect('/videos')
 
-@videos_blueprint.route("/videos/director/<int:id>")
+
+
+@videos_blueprint.route("/filtervideos", methods=['POST'])
 def filter_by_director(id):
     videos = video_repository.select_all()
     filtered_videos = []
@@ -74,16 +76,4 @@ def filter_by_director(id):
     for video in videos:
         if video.director.id == id:
             filtered_videos.append(video)
-    print(videos)
     return render_template("videos/index.html", all_videos=filtered_videos)
-
-# @videos_blueprint.route("/videos/director/<int:id>")
-# def filter_by_genre(id):
-#     videos = video_repository.select_all()
-#     filtered_videos = []
-
-#     for video in videos:
-#         if video.director.id == id:
-#             filtered_videos.append(video)
-#     print(videos)
-#     return render_template("videos/index.html", all_videos=filtered_videos)
