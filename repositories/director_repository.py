@@ -49,7 +49,7 @@ def delete(id):
 
 
 def update(director):
-    sql = "UPDATE directors SET name = %s WHERE id = %s"
+    sql = "UPDATE directors SET (name, contact_number, activity) = (%s, %s, %s) WHERE id = %s"
     values = [director.name, director.contact_number, director.activity, director.id]
     run_sql(sql, values)
 

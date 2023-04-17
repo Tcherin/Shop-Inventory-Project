@@ -6,7 +6,7 @@
   <section id="edit"></section>
     <div>
       <label for="name">Name:</label>
-      <input type="text" id="name" name="title" value="{{director.name}}" required autofocus>
+      <input type="text" id="name" name="name" value="{{director.name}}" required autofocus>
     </div>
 
     <div>
@@ -16,20 +16,20 @@
 
     <div>
       <label for="activity">Activity Status:</label>
-      <input type="text" id="activity" name="activity" value={{director.activity}} required>
-    </div>
-
-    <!-- <div>
-      <label for="director">director:</label>
-      <select id="director" name="director_id">
-        {% for director in all_directors %}
-          <option value="{{ director.id }}"
-            {% if video.director.id== director.id %} selected="selected"{% endif %}>
-            {{ director.name }}
-          </option>
-        {% endfor %}
+      <select id="activity" name="activity">
+  
+        <option value="true"
+          {% if director.activity == True %} selected="selected" {% endif %}>
+          Active
+        </option>
+  
+        <option value="false"
+          {% if director.activity == False %} selected="selected" {% endif %}>
+          Inactive
+        </option>
+  
       </select>
-    </div> -->
+    </div>
 
     <button type="submit">Update Director</button>
   </section>

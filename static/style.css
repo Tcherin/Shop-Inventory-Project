@@ -103,8 +103,18 @@ footer {
     margin: 10px;
 }
 
-/* show page */
+/* new content pages */
 
-#show {
-    
+
+#new {
+   
+  background-color: #4584b1;
+  row-gap: 25px;
+  font-size: 1.5rem;
+  padding: 125px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
+
+#new >

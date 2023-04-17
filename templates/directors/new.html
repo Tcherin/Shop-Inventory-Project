@@ -2,36 +2,25 @@
 
 {% block content %}
     <form action="/directors" method="post">
-        <div>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" placeholder="name" required autofocus>
-        </div>
-        <div>
-            <label for="contact_number">Contact Number:</label>
-            <input type="text" id="contact_number" name="contact_number" placeholder="contact_number" required>
-        </div>
+        <section id="new">
+            <div id="a">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="name" required autofocus>
+            </div>
+            <div id="b">
+                <label for="contact_number">Contact Number:</label>
+                <input type="text" id="contact_number" name="contact_number" placeholder="contact_number" required>
+            </div>
 
-        <!-- <div>
-            <label for="activity">Activity Status:</label>
-            <select id="director" name="director_id">
-                {% for director in all_directors %}
-                    <option value="{{ director.id }}">{{ director.activity }}</option>
-                {% endfor %}
-            </select>
-        </div> -->
-
-        <div>
-            <label for="activity">Activity Status:</label>
-            <select id="director" name="director_id">
-                {% for director in all_directors %}
-                    {% if director.activity == True %}
-                        <option value="{{ director.id }}">Active</option>
-                    {% endif %}
-                {% endfor %}
-            </select>
-        </div>
-    
-        <button type="submit">Add Director</button>
-    
+            <div id="c">
+                <label for="activity">Activity Status:</label>
+                <select id="activity" name="active">
+                <option value="true">Active</option>
+                <option value="false">Inactive</option>
+                </select>
+            </div>
+        
+            <button type="submit">Add Director</button>
+        </section>
     </form>
 {% endblock content %}

@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, request, redirect
 from repositories import director_repository, video_repository
 from models.director import Director
+import pdb
 
 directors_blueprint = Blueprint("directors",__name__)
 
@@ -19,7 +20,7 @@ def new_director():
 def create_director():
     name = request.form['name']
     contact_number = request.form['contact_number']
-    activity = request.form['activity']
+    activity = request.form['active']
 
     director = Director(name, contact_number, activity)
     director_repository.save(director)
@@ -38,7 +39,7 @@ def edit_director(id):
     return render_template("directors/edit.html", director=director)
 
 
-@directors_blueprint.route("/directors/<id>", methods=['POST'])
+@directors_blueprint.route("/directors/<int:id>", methods=['POST'])
 def update_director(id):
     name = request.form['name']
     contact_number = request.form['contact_number']
