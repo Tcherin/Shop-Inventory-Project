@@ -10,6 +10,26 @@
             <label for="contact_number">Contact Number:</label>
             <input type="text" id="contact_number" name="contact_number" placeholder="contact_number" required>
         </div>
+
+        <!-- <div>
+            <label for="activity">Activity Status:</label>
+            <select id="director" name="director_id">
+                {% for director in all_directors %}
+                    <option value="{{ director.id }}">{{ director.activity }}</option>
+                {% endfor %}
+            </select>
+        </div> -->
+
+        <div>
+            <label for="activity">Activity Status:</label>
+            <select id="director" name="director_id">
+                {% for director in all_directors %}
+                    {% if director.activity == True %}
+                        <option value="{{ director.id }}">Active</option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+        </div>
     
         <button type="submit">Add Director</button>
     

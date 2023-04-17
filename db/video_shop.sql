@@ -4,7 +4,8 @@ DROP TABLE IF EXISTS directors;
 CREATE TABLE directors (
   id SERIAL PRIMARY KEY,
   name VARCHAR(255),
-  contact_number VARCHAR(255)
+  contact_number VARCHAR(255),
+  activity BOOLEAN
 );
 
 CREATE TABLE videos (

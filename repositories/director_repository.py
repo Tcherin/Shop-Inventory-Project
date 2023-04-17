@@ -6,8 +6,8 @@ import repositories.video_repository as video_repository
 
 
 def save(director):
-    sql = "INSERT INTO directors (name, contact_number) VALUES (%s, %s) RETURNING *"
-    values = [director.name, director.contact_number]
+    sql = "INSERT INTO directors (name, contact_number, activity) VALUES (%s, %s, %s) RETURNING *"
+    values = [director.name, director.contact_number, director.activity]
     results = run_sql(sql, values)
     id = results[0]['id']
     director.id = id
@@ -21,7 +21,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        director = Director(row['name'], row['contact_number'], row['id'] )
+        director = Director(row['name'], row['contact_number'], row['activity'], row['id'] )
         directors.append(director)
     return directors
 
@@ -33,7 +33,7 @@ def select(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        director = Director(result['name'], result['contact_number'],  result['id'] )
+        director = Director(result['name'], result['contact_number'], result['activity'],  result['id'] )
     return director
 
 
@@ -50,7 +50,7 @@ def delete(id):
 
 def update(director):
     sql = "UPDATE directors SET name = %s WHERE id = %s"
-    values = [director.name, director.contact_number, director.id]
+    values = [director.name, director.contact_number, director.activity, director.id]
     run_sql(sql, values)
 
 def videos(director):

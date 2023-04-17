@@ -19,8 +19,9 @@ def new_director():
 def create_director():
     name = request.form['name']
     contact_number = request.form['contact_number']
+    activity = request.form['activity']
 
-    director = Director(name, contact_number)
+    director = Director(name, contact_number, activity)
     director_repository.save(director)
 
     return redirect('/directors')
@@ -41,8 +42,9 @@ def edit_director(id):
 def update_director(id):
     name = request.form['name']
     contact_number = request.form['contact_number']
+    activity = request.form['activity']
 
-    director = Director(name, contact_number, id)
+    director = Director(name, contact_number, activity, id)
     director_repository.update(director)
     return redirect('/directors')
 

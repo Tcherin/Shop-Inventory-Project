@@ -3,7 +3,12 @@
 {% block content %}
   <div id="show">
     <p>Name: {{director.name}}</p>
-    <p>Genre: {{director.contact_number}}</p>
+    <p>Contact Number: {{director.contact_number}}</p>
+      {% if director.activity == True %}
+          <p> Activity Status: Active </p>
+      {% elif director.activity == False %}
+          <p> Activity Status: Inactive </p>
+      {% endif %}
     <p><a href="/directors/{{director.id}}/edit">Edit</a></p>
   </div>
 {% endblock content %}

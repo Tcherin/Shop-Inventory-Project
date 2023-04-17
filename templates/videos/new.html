@@ -30,7 +30,9 @@
             <label for="director">director:</label>
             <select id="director" name="director_id">
                 {% for director in all_directors %}
+                    {% if director.activity == True %}
                     <option value="{{ director.id }}">{{ director.name }}</option>
+                    {% endif %}
                 {% endfor %}
             </select>
         </div>

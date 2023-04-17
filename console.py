@@ -8,11 +8,11 @@ import repositories.director_repository as director_repository
 video_repository.delete_all()
 director_repository.delete_all()
 
-director1 = Director("Steven Spielberg", "0776494323")
+director1 = Director("Steven Spielberg", "0776494323", True)
 director_repository.save(director1)
-director2 = Director("Christopher Nolan", "0774356323")
+director2 = Director("Christopher Nolan", "0774356323", False)
 director_repository.save(director2)
-director3 = Director("Stanley Kubrick", "0774593827")
+director3 = Director("Stanley Kubrick", "0774593827", True)
 director_repository.save(director3)
 
 director_repository.select_all()

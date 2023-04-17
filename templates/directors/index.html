@@ -6,7 +6,12 @@
                 <div class="content">
                     <div class="title">
                         <p>{{director.name}}</p>
-                        <p>"{{director.contact_number}}"</p>
+                        <p>{{director.contact_number}}</p>
+                        {% if director.activity == True %}
+                            <p> Activity Status: Active </p>
+                        {% elif director.activity == False %}
+                             <p> Activity Status: Inactive </p>
+                        {% endif %}
                     </div>
                     <div class="buttons">
                         <form class="delete-form" action="/directors/{{ director.id }}/delete" method="post">
