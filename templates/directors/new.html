@@ -3,9 +3,7 @@
 {% block content %}
     <form action="/directors" method="post">
         <header>
-            <h1>
-            Create a New Director
-            </h1>
+            <h1>Create a New Director</h1>
         </header>
         <section id="new">
             <div>
@@ -16,15 +14,13 @@
                 <label for="contact_number">Contact Number:</label>
                 <input type="text" id="contact_number" name="contact_number" placeholder="contact_number" required>
             </div>
-
             <div>
                 <label for="activity">Activity Status:</label>
                 <select id="activity" name="active">
-                <option value="true">Active</option>
-                <option value="false">Inactive</option>
+                    <option value="true">Active</option>
+                    <option value="false">Inactive</option>
                 </select>
-            </div>
-        
+            </div>       
             <button id="new_button" type="submit">Add Director</button>
         </section>
     </form>

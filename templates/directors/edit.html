@@ -3,35 +3,29 @@
 {% block content %}
 
 <form action="/directors/{{director.id}}" method="post">
-  <section id="new">
-    <div>
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" value="{{director.name}}" required autofocus>
-    </div>
-
-    <div>
-      <label for="contact_number">Contact number:</label>
-      <input type="text" id="contact_number" name="contact_number" value="{{director.contact_number}}" required>
-    </div>
-
-    <div>
-      <label for="activity">Activity Status:</label>
-      <select id="activity" name="activity">
-  
-        <option value="true"
-          {% if director.activity == True %} selected="selected" {% endif %}>
-          Active
-        </option>
-  
-        <option value="false"
-          {% if director.activity == False %} selected="selected" {% endif %}>
-          Inactive
-        </option>
-  
-      </select>
-    </div>
-
-    <button type="submit">Update Director</button>
+    <section id="new">
+          <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" value="{{director.name}}" required autofocus>
+         </div>
+          <div>
+            <label for="contact_number">Contact number:</label>
+            <input type="text" id="contact_number" name="contact_number" value="{{director.contact_number}}" required>
+          </div>
+          <div>
+            <label for="activity">Activity Status:</label>
+            <select id="activity" name="activity">
+              <option value="true"
+                  {% if director.activity == True %} selected="selected" {% endif %}>
+                  Active
+              </option>
+              <option value="false"
+                  {% if director.activity == False %} selected="selected" {% endif %}>
+                  Inactive
+              </option>
+            </select>
+          </div>
+      <button type="submit">Update Director</button>
   </section>
 </form>
 
