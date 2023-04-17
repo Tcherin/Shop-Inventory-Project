@@ -109,12 +109,16 @@ footer {
 #new {
    
   background-color: #4584b1;
+  color: #fff;
   row-gap: 25px;
   font-size: 1.5rem;
-  padding: 125px;
+  padding: 90px;
   display: flex;
   flex-direction: column;
   text-align: center;
 }
 
-#new >
+#show {
+   background-color: salmon; 
+
+}

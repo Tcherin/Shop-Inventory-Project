@@ -2,17 +2,22 @@
 
 {% block content %}
     <form action="/directors" method="post">
+        <header>
+            <h1>
+            Create a New Director
+            </h1>
+        </header>
         <section id="new">
-            <div id="a">
+            <div>
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" placeholder="name" required autofocus>
             </div>
-            <div id="b">
+            <div>
                 <label for="contact_number">Contact Number:</label>
                 <input type="text" id="contact_number" name="contact_number" placeholder="contact_number" required>
             </div>
 
-            <div id="c">
+            <div>
                 <label for="activity">Activity Status:</label>
                 <select id="activity" name="active">
                 <option value="true">Active</option>
@@ -20,7 +25,7 @@
                 </select>
             </div>
         
-            <button type="submit">Add Director</button>
+            <button id="new_button" type="submit">Add Director</button>
         </section>
     </form>
 {% endblock content %}

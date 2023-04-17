@@ -3,7 +3,7 @@
 {% block content %}
 
 <form action="/directors/{{director.id}}" method="post">
-  <section id="edit"></section>
+  <section id="new">
     <div>
       <label for="name">Name:</label>
       <input type="text" id="name" name="name" value="{{director.name}}" required autofocus>
