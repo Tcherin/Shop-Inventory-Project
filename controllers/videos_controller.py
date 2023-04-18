@@ -69,11 +69,23 @@ def delete_video(id):
 
 
 @videos_blueprint.route("/filtervideos", methods=['POST'])
-def filter_by_supplier(id):
+def filter_by_supplier():
     videos = video_repository.select_all()
+    supplier = request.form['supplier_name']
     filtered_videos = []
 
     for video in videos:
-        if video.supplier.id == id:
+        if video.supplier.name == supplier:
             filtered_videos.append(video)
     return render_template("videos/index.html", all_videos=filtered_videos)
+
+@videos_blueprint.route("/filtergenre", methods=['POST'])
+def filter_by_genre():
+    videos = video_repository.select_all()
+    genre = request.form['video_genre']
+    filtered_genre = []
+
+    for video in videos:
+        if video.genre == genre:
+            filtered_genre.append(video)
+    return render_template("videos/index.html", all_videos=filtered_genre)

@@ -15,8 +15,8 @@
         {% elif video.stock_quantity == 0 %}
           <p> Stock Quantity: {{video.stock_quantity}} (Out of Stock) </p>
         {% endif %}
-      <p>Buying cost: {{video.buying_cost}}</p>
-      <p>Selling Price: {{video.selling_price}}</p>
+      <p>Buying cost: ${{video.buying_cost}}</p>
+      <p>Selling Price: ${{video.selling_price}}</p>
       <p><a href="/videos/{{video.id}}/edit">Edit</a></p>
     </section>
   </div>
