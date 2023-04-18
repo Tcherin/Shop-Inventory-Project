@@ -1,7 +1,7 @@
 DROP TABLE IF EXISTS videos;
-DROP TABLE IF EXISTS directors;
+DROP TABLE IF EXISTS suppliers;
 
-CREATE TABLE directors (
+CREATE TABLE suppliers (
   id SERIAL PRIMARY KEY,
   name VARCHAR(255),
   contact_number VARCHAR(255),
@@ -16,5 +16,5 @@ CREATE TABLE videos (
   stock_quantity INT,
   buying_cost INT,
   selling_price INT,
-  director_id INT NOT NULL REFERENCES directors(id)
+  supplier_id INT NOT NULL REFERENCES suppliers(id)
 );

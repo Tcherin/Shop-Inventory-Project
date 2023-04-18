@@ -2,30 +2,30 @@
 
 {% block content %}
 
-<form action="/directors/{{director.id}}" method="post">
+<form action="/suppliers/{{supplier.id}}" method="post">
     <section id="new">
           <div>
             <label for="name">Name:</label>
-            <input type="text" id="name" name="name" value="{{director.name}}" required autofocus>
+            <input type="text" id="name" name="name" value="{{supplier.name}}" required autofocus>
          </div>
           <div>
             <label for="contact_number">Contact number:</label>
-            <input type="text" id="contact_number" name="contact_number" value="{{director.contact_number}}" required>
+            <input type="text" id="contact_number" name="contact_number" value="{{supplier.contact_number}}" required>
           </div>
           <div>
             <label for="activity">Activity Status:</label>
             <select id="activity" name="activity">
               <option value="true"
-                  {% if director.activity == True %} selected="selected" {% endif %}>
+                  {% if supplier.activity == True %} selected="selected" {% endif %}>
                   Active
               </option>
               <option value="false"
-                  {% if director.activity == False %} selected="selected" {% endif %}>
+                  {% if supplier.activity == False %} selected="selected" {% endif %}>
                   Inactive
               </option>
             </select>
           </div>
-      <button type="submit">Update Director</button>
+      <button type="submit">Update Supplier</button>
   </section>
 </form>
 

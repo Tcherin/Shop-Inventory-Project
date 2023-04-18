@@ -3,42 +3,42 @@
 {% block content %}
 <form action="/videos/{{video.id}}" method="post">
   <section id="new">
-    <div>
+    <div id="edit">
       <label for="title">Title:</label>
       <input type="text" id="title" name="title" value="{{video.title}}" required autofocus>
     </div>
-    <div>
+    <div id="edit">
       <label for="genre">Genre:</label>
       <input type="text" id="genre" name="genre" value="{{video.genre}}" required>
     </div>
-    <div>
+    <div id="edit">
       <label for="description">Description:</label>
       <input type="text" id="description" name="description" value="{{video.description}}" required>
     </div>
-    <div>
+    <div id="edit">
       <label for="stock_quantity">Stock Quantity:</label>
       <input type="number" id="stock_quantity" name="stock_quantity" value="{{video.stock_quantity}}" required>
     </div>
-    <div>
+    <div id="edit">
       <label for="buying_cost">Buying Cost:</label>
       <input type="number" id="buying_cost" name="buying_cost" value="{{video.buying_cost}}" required>
     </div>
-    <div>
+    <div id="edit">
       <label for="selling_price">Selling Price:</label>
       <input type="number" id="selling_price" name="selling_price" value="{{video.selling_price}}" required>
     </div>
-    <div>
-      <label for="director">director:</label>
-      <select id="director" name="director_id">
-        {% for director in all_directors %}
-          <option value="{{ director.id }}"
-            {% if video.director.id== director.id %} selected="selected"{% endif %}>
-            {{ director.name }}
+    <div id="edit">
+      <label for="supplier">supplier:</label>
+      <select id="supplier" name="supplier_id">
+        {% for supplier in all_suppliers %}
+          <option value="{{ supplier.id }}"
+            {% if video.supplier.id== supplier.id %} selected="selected"{% endif %}>
+            {{ supplier.name }}
           </option>
         {% endfor %}
       </select>
     </div>
-    <button type="submit">Update video</button>
+    <button id="button" type="submit">Update video</button>
   </section>
 </form>
 

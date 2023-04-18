@@ -1,4 +1,4 @@
-class Director:
+class Supplier:
     def __init__(self, name, contact_number, activity=True, id=None):
         self.name = name
         self.contact_number = contact_number

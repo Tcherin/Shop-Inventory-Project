@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request, redirect
-from repositories import video_repository, director_repository
+from repositories import video_repository, supplier_repository
 from models.video import Video
 
 videos_blueprint = Blueprint("videos",__name__)
@@ -12,8 +12,8 @@ def videos():
 
 @videos_blueprint.route("/videos/new")
 def new_video():
-    directors = director_repository.select_all()
-    return render_template("videos/new.html", all_directors=directors)
+    suppliers = supplier_repository.select_all()
+    return render_template("videos/new.html", all_suppliers=suppliers)
 
 
 @videos_blueprint.route("/videos", methods=['POST'])
@@ -24,10 +24,10 @@ def create_video():
     stock_quantity = request.form['stock_quantity']
     buying_cost = request.form['buying_cost']
     selling_price = request.form['selling_price']
-    director_id = request.form['director_id']
+    supplier_id = request.form['supplier_id']
 
-    director = director_repository.select(director_id)
-    video = Video(title, genre, description, stock_quantity, buying_cost, selling_price, director)
+    supplier = supplier_repository.select(supplier_id)
+    video = Video(title, genre, description, stock_quantity, buying_cost, selling_price, supplier)
     video_repository.save(video)
 
     return redirect('/videos')
@@ -38,11 +38,12 @@ def show_video(id):
     video = video_repository.select(id)
     return render_template("videos/show.html", video=video)
 
+
 @videos_blueprint.route("/videos/<id>/edit")
 def edit_video(id):
     video = video_repository.select(id)
-    directors = director_repository.select_all()
-    return render_template("videos/edit.html", video=video, all_directors=directors)
+    suppliers = supplier_repository.select_all()
+    return render_template("videos/edit.html", video=video, all_suppliers=suppliers)
 
 
 @videos_blueprint.route("/videos/<id>", methods=['POST'])
@@ -53,10 +54,10 @@ def update_video(id):
     stock_quantity = request.form['stock_quantity']
     buying_cost =  request.form['buying_cost']
     selling_price = request.form['selling_price']
-    director_id = request.form['director_id']
+    supplier_id = request.form['supplier_id']
 
-    director = director_repository.select(director_id)
-    video = Video(title, genre, description, stock_quantity, buying_cost, selling_price, director, id)
+    supplier = supplier_repository.select(supplier_id)
+    video = Video(title, genre, description, stock_quantity, buying_cost, selling_price, supplier, id)
     video_repository.update(video)
     return redirect('/videos')
 
@@ -67,13 +68,12 @@ def delete_video(id):
     return redirect('/videos')
 
 
-
 @videos_blueprint.route("/filtervideos", methods=['POST'])
-def filter_by_director(id):
+def filter_by_supplier(id):
     videos = video_repository.select_all()
     filtered_videos = []
 
     for video in videos:
-        if video.director.id == id:
+        if video.supplier.id == id:
             filtered_videos.append(video)
     return render_template("videos/index.html", all_videos=filtered_videos)

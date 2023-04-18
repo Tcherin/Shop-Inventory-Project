@@ -31,11 +31,11 @@
                 <input type="number" id="selling_price" name="selling_price" required>
             </div>
             <div>
-                <label for="director">director:</label>
-                <select id="director" name="director_id">
-                    {% for director in all_directors %}
-                        {% if director.activity == True %}
-                        <option value="{{ director.id }}">{{ director.name }}</option>
+                <label for="supplier">supplier:</label>
+                <select id="supplier" name="supplier_id">
+                    {% for supplier in all_suppliers %}
+                        {% if supplier.activity == True %}
+                        <option value="{{ supplier.id }}">{{ supplier.name }}</option>
                         {% endif %}
                     {% endfor %}
                 </select>

@@ -2,28 +2,28 @@
 
 {% block content %}
 
-<form action="/filterdirectors" method="post">
-    <input name="director_name" type="text">
+<form action="/filtersuppliers" method="post">
+    <input name="supplier_name" type="text">
     <input type="submit">
 </form>
-    {% for director in all_directors %}
+    {% for supplier in all_suppliers %}
             <div class="video">
                 <div class="content">
                     <div class="title">
-                        <p>{{director.name}}</p>
-                        <p>{{director.contact_number}}</p>
-                        {% if director.activity == True %}
+                        <p>Name: {{supplier.name}}</p>
+                        <p>Contact number: {{supplier.contact_number}}</p>
+                        {% if supplier.activity == True %}
                             <p> Activity Status: Active </p>
-                        {% elif director.activity == False %}
+                        {% elif supplier.activity == False %}
                              <p> Activity Status: Inactive </p>
                         {% endif %}
                     </div>
                     <div class="buttons">
-                        <form class="delete-form" action="/directors/{{ director.id }}/delete" method="post">
+                        <form class="delete-form" action="/suppliers/{{ supplier.id }}/delete" method="post">
                             <button class="trash-button">
                                 <i class="fa fa-trash-o fa-3x" style="color: red" aria-hidden="true"></i>
                             </button>
-                            <a href="/directors/{{director.id}}/edit">Edit</a>
+                            <a href="/suppliers/{{supplier.id}}/edit">Edit</a>
                         </form>
                     </div>
                 </div>
