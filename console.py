@@ -10,7 +10,7 @@ supplier_repository.delete_all()
 
 supplier1 = Supplier("VIDEOS R US", "0776494323", True)
 supplier_repository.save(supplier1)
-supplier2 = Supplier("WE STILL SELL EM VIDEOS", "0774356323", False)
+supplier2 = Supplier("We still got em videos", "0774356323", False)
 supplier_repository.save(supplier2)
 supplier3 = Supplier("VH Yes!", "0774593827", True)
 supplier_repository.save(supplier3)

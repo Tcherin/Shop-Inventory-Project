@@ -2,13 +2,14 @@
 
 {% block content %}
 
-            <header>
+            <header id="header">
                 <h1>Inventory List</h1>
             </header>
             <form action="/filtervideos" method="post">
                 <input name="video_name" type="text">
                 <input type="submit">
             </form>
+        <section class="video-container">
         {% for video in all_videos %}
             <div class="video">
                 <div class="content">
@@ -25,6 +26,7 @@
                         </form>
                     </div>
                 </div>
-            </div> 
-    {% endfor %}
+            </div>
+        {% endfor %}
+        </section> 
 {% endblock content %}

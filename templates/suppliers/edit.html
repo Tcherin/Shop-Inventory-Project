@@ -4,6 +4,7 @@
 
 <form action="/suppliers/{{supplier.id}}" method="post">
     <section id="new">
+      <section id="new2">
           <div>
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" value="{{supplier.name}}" required autofocus>
@@ -25,7 +26,8 @@
               </option>
             </select>
           </div>
-      <button type="submit">Update Supplier</button>
+      <button id="button" type="submit">Update Supplier</button>
+    </section>
   </section>
 </form>
 

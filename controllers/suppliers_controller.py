@@ -23,7 +23,7 @@ def create_supplier():
     contact_number = request.form['contact_number']
     activity = request.form['active']
 
-    supplier = supplier(name, contact_number, activity)
+    supplier = Supplier(name, contact_number, activity)
     supplier_repository.save(supplier)
 
     return redirect('/suppliers')
@@ -47,7 +47,7 @@ def update_supplier(id):
     contact_number = request.form['contact_number']
     activity = request.form['activity']
 
-    supplier = supplier(name, contact_number, activity, id)
+    supplier = Supplier(name, contact_number, activity, id)
     supplier_repository.update(supplier)
     return redirect('/suppliers')
 

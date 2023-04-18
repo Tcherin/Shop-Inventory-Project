@@ -2,10 +2,15 @@
 
 {% block content %}
 
+<header id="header">
+    <h1>Supplier List</h1>
+</header>
+
 <form action="/filtersuppliers" method="post">
     <input name="supplier_name" type="text">
     <input type="submit">
 </form>
+    <section class="video-container">
     {% for supplier in all_suppliers %}
             <div class="video">
                 <div class="content">
@@ -29,4 +34,5 @@
                 </div>
             </div> 
     {% endfor %}
+    </section>
 {% endblock content %}
