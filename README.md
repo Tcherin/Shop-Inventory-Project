@@ -36,6 +36,3 @@ In the future I would like to include:
 5. Run Flask using command `flask run`
 6. Access webpage using url: http://localhost:4999
 7. To exit Flask, use CTRL + C in the terminal
-
-## How to use the project
-[include screenshots?]
