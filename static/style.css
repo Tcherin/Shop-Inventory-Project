@@ -39,10 +39,6 @@ header > div > h2 {
     justify-content: flex-end;
 }
 
-#header {
-    height: ;
-}
-
 .menu {
     margin: 10px;
     height: 1rem;
@@ -153,8 +149,7 @@ footer {
 }
 
 #show {
-   background-color: salmon; 
-
+   background-color: salmon;
 }
 
 #edit {

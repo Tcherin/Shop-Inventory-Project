@@ -16,5 +16,5 @@ CREATE TABLE videos (
   stock_quantity INT,
   buying_cost INT,
   selling_price INT,
-  supplier_id INT NOT NULL REFERENCES suppliers(id)
+  supplier_id INT NOT NULL REFERENCES suppliers(id) ON DELETE CASCADE
 );
