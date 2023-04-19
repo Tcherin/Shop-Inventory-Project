@@ -1,4 +1,4 @@
-# shop_snventory solo_project
+# shop_inventory solo_project
 
 ## Project description:
 ### What does the application do?
