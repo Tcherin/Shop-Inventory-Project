@@ -31,7 +31,7 @@ In the future I would like to include:
 ## How to install and run the project:
 1. Open files in editor e.g. Visual Studio Code
 2. Create database: 'video_shop.sql' - Run `dropdb video_shop` then `createdb video_shop`
-3. Run psql in the terminal to initiate the database `psql -d -f video_shop.sql`
+3. Run psql in the terminal to initiate the database `psql -d video_shop -f db/video_shop.sql`
 4. Run console.py file using command `python3 console.py`
 5. Run Flask using command `flask run`
 6. Access webpage using url: http://localhost:4999
