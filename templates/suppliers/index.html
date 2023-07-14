@@ -1,39 +1,41 @@
-{% extends 'base.html' %}
-
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 
 <header id="header">
-    <h1>Supplier List</h1>
+  <h1>Supplier List</h1>
 </header>
 
 <form action="/filtersuppliers" method="post">
-    Filter by Supplier:
-    <input name="supplier_name" type="text">
-    <input type="submit">
+  Filter by Supplier:
+  <input name="supplier_name" type="text" />
+  <input type="submit" />
 </form>
-    <section class="video-container">
-    {% for supplier in all_suppliers %}
-            <div class="video">
-                <div class="content">
-                    <div class="title">
-                        <p>Name: {{supplier.name}}</p>
-                        <p>Contact number: {{supplier.contact_number}}</p>
-                        {% if supplier.activity == True %}
-                            <p> Activity Status: Active </p>
-                        {% elif supplier.activity == False %}
-                             <p> Activity Status: Inactive </p>
-                        {% endif %}
-                    </div>
-                    <div class="buttons">
-                        <form class="delete-form" action="/suppliers/{{ supplier.id }}/delete" method="post">
-                            <button type="submit" class="trash-button">
-                                <i class="fa fa-trash-o fa-3x" style="color: red" aria-hidden="true"></i>
-                            </button>
-                            <a href="/suppliers/{{supplier.id}}/edit">Edit</a>
-                        </form>
-                    </div>
-                </div>
-            </div> 
-    {% endfor %}
-    </section>
+<section class="video-container">
+  {% for supplier in all_suppliers %}
+  <div class="video">
+    <div class="content">
+      <div class="title">
+        <p>Name: {{supplier.name}}</p>
+        <p>Contact number: {{supplier.contact_number}}</p>
+        {% if supplier.activity == True %}
+        <p>Activity Status: Active</p>
+        {% elif supplier.activity == False %}
+        <p>Activity Status: Inactive</p>
+        {% endif %}
+      </div>
+      <div class="buttons">
+        <form
+          class="delete-form"
+          action="/suppliers/{{ supplier.id }}/delete"
+          method="post"
+        >
+          <button type="submit" class="trash-button">Delete</button>
+          <button>
+            <a href="/suppliers/{{supplier.id}}/edit">Edit Details</a>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</section>
 {% endblock content %}
