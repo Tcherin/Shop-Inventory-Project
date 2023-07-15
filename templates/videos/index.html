@@ -1,40 +1,45 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% block stylesheet %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='base.css')}}"
+/>
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='index.css')}}"
+/>
+{% endblock stylesheet %} {% block content %}
 
-{% block content %}
-
-            <header id="header">
-                <h1>Inventory List</h1>
-            </header>
-            <section class="video_filters">
-                <form action="/filtervideos" method="post">
-                    Filter by Supplier:
-                    <input name="supplier_name" type="text">
-                    <input type="submit">
-                </form>
-                <form action="/filtergenre" method="post">
-                    Filter by Genre:
-                    <input name="video_genre" type="text">
-                    <input type="submit">
-                </form>
-            </section>
-        <section class="video-container">
-        {% for video in all_videos %}
-            <div class="video">
-                <div class="content">
-                    <div class="title">
-                        <p>{{video.title}}</p>
-                        <p>"{{video.description}}"</p>
-                    </div>
-                    <div class="buttons">
-                        <form class="delete-form" action="/videos/{{ video.id }}/delete" method="post">
-                            <button class="trash-button">
-                                <i class="fa fa-trash-o fa-3x" style="color: red" aria-hidden="true"></i>
-                            </button>
-                            <a href="/videos/{{video.id}}"> View Full Details</a>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        {% endfor %}
-        </section> 
+<header>
+  <h1>Inventory List</h1>
+</header>
+<section class="filter">
+  <form action="/filtervideos" method="post">
+    Filter by Supplier:
+    <input name="supplier_name" type="text" />
+    <button><input type="submit" /></button>
+  </form>
+  <form action="/filtergenre" method="post">
+    Filter by Genre:
+    <input name="video_genre" type="text" />
+    <button><input type="submit" /></button>
+  </form>
+</section>
+<section class="list">
+  {% for video in all_videos %}
+  <div class="item">
+    <div>
+      <p>{{video.title}}</p>
+      <p>"{{video.description}}"</p>
+    </div>
+    <div>
+      <form action="/videos/{{ video.id }}/delete" method="post">
+        <button>Delete</button>
+        <button><a href="/videos/{{video.id}}"> View Full Details</a></button>
+      </form>
+    </div>
+  </div>
+  {% endfor %}
+</section>
 {% endblock content %}

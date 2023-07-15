@@ -39,8 +39,8 @@ video_10 = Video("Man of Steel", "Superhero", "Illegal alien of temporary use to
 video_repository.save(video_10)
 video_11 = Video("The Wizard of Oz", "Kids", "Woman commits murder and meets three friends to kill again.", 4, 6, 8, supplier_1)
 video_repository.save(video_11)
-video_12 = Video("The Sound of Music", "Musical", "Nun bangs her boss and flees the country.", 9, 4, 6, supplier_3)
-video_repository.save(video_12)
+# video_12 = Video("The Sound of Music", "Musical", "Nun bangs her boss and flees the country.", 9, 4, 6, supplier_3)
+# video_repository.save(video_12)
 
 
 

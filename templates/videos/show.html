@@ -1,23 +1,21 @@
-{% extends 'base.html' %}
-
-{% block content %}
-  <div id="new">
-    <section id="show">
-      <p>{{video.title}}</p>
-      <hr>
-      <p>Supplier: {{video.supplier.name}}</p>
-      <p>Genre: {{video.genre}}</p>
-      <p>Description: {{video.description}}</p>
-        {% if video.stock_quantity >= 5 %}
-          <p> Stock Quantity: {{video.stock_quantity}} </p>
-        {% elif video.stock_quantity <= 4 and video.stock_quantity != 0 %}
-          <p> Stock Quantity: {{video.stock_quantity}} (Low Stock) </p>
-        {% elif video.stock_quantity == 0 %}
-          <p> Stock Quantity: {{video.stock_quantity}} (Out of Stock) </p>
-        {% endif %}
-      <p>Buying cost: ${{video.buying_cost}}</p>
-      <p>Selling Price: ${{video.selling_price}}</p>
-      <p><a href="/videos/{{video.id}}/edit">Edit</a></p>
-    </section>
-  </div>
+{% extends 'base.html' %} {% block content %}
+<div>
+  <section>
+    <p>{{video.title}}</p>
+    <hr />
+    <p>Supplier: {{video.supplier.name}}</p>
+    <p>Genre: {{video.genre}}</p>
+    <p>Description: {{video.description}}</p>
+    {% if video.stock_quantity >= 5 %}
+    <p>Stock Quantity: {{video.stock_quantity}}</p>
+    {% elif video.stock_quantity <= 4 and video.stock_quantity != 0 %}
+    <p>Stock Quantity: {{video.stock_quantity}} (Low Stock)</p>
+    {% elif video.stock_quantity == 0 %}
+    <p>Stock Quantity: {{video.stock_quantity}} (Out of Stock)</p>
+    {% endif %}
+    <p>Buying cost: ${{video.buying_cost}}</p>
+    <p>Selling Price: ${{video.selling_price}}</p>
+    <button><a href="/videos/{{video.id}}/edit">Edit</a></button>
+  </section>
+</div>
 {% endblock content %}
