@@ -8,15 +8,15 @@
     <link
       rel="stylesheet"
       type="text/css"
-      href="{{ url_for('static', filename='landing.css') }}"
+      href="{{ url_for('static', filename='base.css') }}"
     />
     {% endblock stylesheet %}
     <title>VHS Depository</title>
   </head>
   <body>
     <header>
-      <nav>
-        <ul>
+      <nav class="navbar-container">
+        <ul class="navbar">
           <li><a href="/">Home</a></li>
           <li><a href="/videos">Videos</a></li>
           <li><a href="/videos/new">New Video</a></li>

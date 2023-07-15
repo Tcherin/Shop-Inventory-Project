@@ -1,0 +1,19 @@
+body {
+  background-color: #4584b1;
+}
+
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 1em;
+}
+
+ul {
+  all: unset;
+  list-style: none;
+}
+
+a {
+  all: unset;
+  margin-right: 1em;
+}
