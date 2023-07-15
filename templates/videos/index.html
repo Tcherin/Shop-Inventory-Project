@@ -1,9 +1,9 @@
 {% extends 'base.html' %} {% block content %}
 
-<header id="header">
+<header>
   <h1>Inventory List</h1>
 </header>
-<section class="video_filters">
+<section>
   <form action="/filtervideos" method="post">
     Filter by Supplier:
     <input name="supplier_name" type="text" />
@@ -15,21 +15,17 @@
     <input type="submit" />
   </form>
 </section>
-<section class="video-container">
+<section>
   {% for video in all_videos %}
-  <div class="video">
-    <div class="content">
-      <div class="title">
+  <div>
+    <div>
+      <div>
         <p>{{video.title}}</p>
         <p>"{{video.description}}"</p>
       </div>
-      <div class="buttons">
-        <form
-          class="delete-form"
-          action="/videos/{{ video.id }}/delete"
-          method="post"
-        >
-          <button class="trash-button">Delete</button>
+      <div>
+        <form action="/videos/{{ video.id }}/delete" method="post">
+          <button>Delete</button>
           <button><a href="/videos/{{video.id}}"> View Full Details</a></button>
         </form>
       </div>

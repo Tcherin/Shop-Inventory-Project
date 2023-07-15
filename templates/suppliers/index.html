@@ -1,6 +1,6 @@
 {% extends 'base.html' %} {% block content %}
 
-<header id="header">
+<header>
   <h1>Supplier List</h1>
 </header>
 
@@ -9,7 +9,7 @@
   <input name="supplier_name" type="text" />
   <input type="submit" />
 </form>
-<section class="video-container">
+<section>
   {% for supplier in all_suppliers %}
   <div class="video">
     <div class="content">
@@ -22,13 +22,9 @@
         <p>Activity Status: Inactive</p>
         {% endif %}
       </div>
-      <div class="buttons">
-        <form
-          class="delete-form"
-          action="/suppliers/{{ supplier.id }}/delete"
-          method="post"
-        >
-          <button type="submit" class="trash-button">Delete</button>
+      <div>
+        <form action="/suppliers/{{ supplier.id }}/delete" method="post">
+          <button type="submit">Delete</button>
           <button>
             <a href="/suppliers/{{supplier.id}}/edit">Edit Details</a>
           </button>

@@ -3,8 +3,8 @@
 {% block content %}
 
 <form action="/suppliers/{{supplier.id}}" method="post">
-    <section id="new">
-      <section id="new2">
+    <section>
+      <section>
           <div>
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" value="{{supplier.name}}" required autofocus>
@@ -15,7 +15,7 @@
           </div>
           <div>
             <label for="activity">Activity Status:</label>
-            <select id="activity" name="activity">
+            <select name="activity">
               <option value="true"
                   {% if supplier.activity == True %} selected="selected" {% endif %}>
                   Active
@@ -26,7 +26,7 @@
               </option>
             </select>
           </div>
-      <button id="button" type="submit">Update Supplier</button>
+      <button type="submit">Update Supplier</button>
     </section>
   </section>
 </form>

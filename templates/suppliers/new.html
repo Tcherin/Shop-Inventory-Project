@@ -1,29 +1,40 @@
-{% extends 'base.html' %}
-
-{% block content %}
-    <form action="/suppliers" method="post">
-        <header id="header">
-            <h1>Create a New Supplier</h1>
-        </header>
-        <section id="new">
-            <section id="new2">
-            <div>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" placeholder="name" required autofocus>
-            </div>
-            <div>
-                <label for="contact_number">Contact Number:</label>
-                <input type="text" id="contact_number" name="contact_number" placeholder="contact_number" required>
-            </div>
-            <div>
-                <label for="activity">Activity Status:</label>
-                <select id="activity" name="active">
-                    <option value="true">Active</option>
-                    <option value="false">Inactive</option>
-                </select>
-            </div>       
-            <button id="button" type="submit">Add Supplier</button>
-        </section>
-        </section>
-    </form>
+{% extends 'base.html' %} {% block content %}
+<form action="/suppliers" method="post">
+  <header>
+    <h1>Create a New Supplier</h1>
+  </header>
+  <section>
+    <section>
+      <div>
+        <label for="name">Name:</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="name"
+          required
+          autofocus
+        />
+      </div>
+      <div>
+        <label for="contact_number">Contact Number:</label>
+        <input
+          type="text"
+          id="contact_number"
+          name="contact_number"
+          placeholder="contact_number"
+          required
+        />
+      </div>
+      <div>
+        <label for="activity">Activity Status:</label>
+        <select id="activity" name="active">
+          <option value="true">Active</option>
+          <option value="false">Inactive</option>
+        </select>
+      </div>
+      <button type="submit">Add Supplier</button>
+    </section>
+  </section>
+</form>
 {% endblock content %}

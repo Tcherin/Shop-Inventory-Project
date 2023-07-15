@@ -2,35 +2,35 @@
 
 {% block content %}
 <form action="/videos/{{video.id}}" method="post">
-  <section id="new">
-    <section id="new2">
-    <div id="edit">
+  <section>
+    <section>
+    <div>
       <label for="title">Title:</label>
       <input type="text" id="title" name="title" value="{{video.title}}" required autofocus>
     </div>
-    <div id="edit">
+    <div>
       <label for="genre">Genre:</label>
       <input type="text" id="genre" name="genre" value="{{video.genre}}" required>
     </div>
-    <div id="edit">
+    <div>
       <label for="description">Description:</label>
       <input type="text" id="description" name="description" value="{{video.description}}" required>
     </div>
-    <div id="edit">
+    <div>
       <label for="stock_quantity">Stock Quantity:</label>
       <input type="number" id="stock_quantity" name="stock_quantity" value="{{video.stock_quantity}}" required>
     </div>
-    <div id="edit">
+    <div>
       <label for="buying_cost">Buying Cost:</label>
       <input type="number" id="buying_cost" name="buying_cost" value="{{video.buying_cost}}" required>
     </div>
-    <div id="edit">
+    <div>
       <label for="selling_price">Selling Price:</label>
       <input type="number" id="selling_price" name="selling_price" value="{{video.selling_price}}" required>
     </div>
-    <div id="edit">
+    <div>
       <label for="supplier">supplier:</label>
-      <select id="supplier" name="supplier_id">
+      <select name="supplier_id">
         {% for supplier in all_suppliers %}
           <option value="{{ supplier.id }}"
             {% if video.supplier.id== supplier.id %} selected="selected"{% endif %}>
@@ -39,7 +39,7 @@
         {% endfor %}
       </select>
     </div>
-    <button id="button" type="submit">Update video</button>
+    <button type="submit">Update video</button>
     </section>
   </section>
 </form>
