@@ -1,11 +1,25 @@
 body {
   background-color: #4584b1;
+  color: white;
 }
 
 .navbar {
   display: flex;
   justify-content: flex-end;
+  gap: 2em;
   margin-right: 1em;
+}
+
+button {
+  all: unset;
+  background-color: #4584b1;
+  border-radius: 5px;
+  border: 3px solid silver;
+  padding: 3px;
+}
+
+button > input {
+  all: unset;
 }
 
 ul {
@@ -15,5 +29,4 @@ ul {
 
 a {
   all: unset;
-  margin-right: 1em;
 }

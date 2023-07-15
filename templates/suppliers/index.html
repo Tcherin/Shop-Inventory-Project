@@ -14,33 +14,32 @@
 <header>
   <h1>Supplier List</h1>
 </header>
-
-<form action="/filtersuppliers" method="post">
-  Filter by Supplier:
-  <input name="supplier_name" type="text" />
-  <input type="submit" />
-</form>
-<section>
+<section class="filter">
+  <form action="/filtersuppliers" method="post">
+    Filter by Supplier:
+    <input name="supplier_name" type="text" />
+    <button><input type="submit" /></button>
+  </form>
+</section>
+<section class="list">
   {% for supplier in all_suppliers %}
-  <div class="video">
-    <div class="content">
-      <div class="title">
-        <p>Name: {{supplier.name}}</p>
-        <p>Contact number: {{supplier.contact_number}}</p>
-        {% if supplier.activity == True %}
-        <p>Activity Status: Active</p>
-        {% elif supplier.activity == False %}
-        <p>Activity Status: Inactive</p>
-        {% endif %}
-      </div>
-      <div>
-        <form action="/suppliers/{{ supplier.id }}/delete" method="post">
-          <button type="submit">Delete</button>
-          <button>
-            <a href="/suppliers/{{supplier.id}}/edit">Edit Details</a>
-          </button>
-        </form>
-      </div>
+  <div class="item">
+    <div>
+      <p>Name: {{supplier.name}}</p>
+      <p>Contact number: {{supplier.contact_number}}</p>
+      {% if supplier.activity == True %}
+      <p>Activity Status: Active</p>
+      {% elif supplier.activity == False %}
+      <p>Activity Status: Inactive</p>
+      {% endif %}
+    </div>
+    <div>
+      <form action="/suppliers/{{ supplier.id }}/delete" method="post">
+        <button type="submit">Delete</button>
+        <button>
+          <a href="/suppliers/{{supplier.id}}/edit">Edit Details</a>
+        </button>
+      </form>
     </div>
   </div>
   {% endfor %}

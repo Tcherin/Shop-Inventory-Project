@@ -14,32 +14,30 @@
 <header>
   <h1>Inventory List</h1>
 </header>
-<section>
+<section class="filter">
   <form action="/filtervideos" method="post">
     Filter by Supplier:
     <input name="supplier_name" type="text" />
-    <input type="submit" />
+    <button><input type="submit" /></button>
   </form>
   <form action="/filtergenre" method="post">
     Filter by Genre:
     <input name="video_genre" type="text" />
-    <input type="submit" />
+    <button><input type="submit" /></button>
   </form>
 </section>
-<section>
+<section class="list">
   {% for video in all_videos %}
-  <div>
+  <div class="item">
     <div>
-      <div>
-        <p>{{video.title}}</p>
-        <p>"{{video.description}}"</p>
-      </div>
-      <div>
-        <form action="/videos/{{ video.id }}/delete" method="post">
-          <button>Delete</button>
-          <button><a href="/videos/{{video.id}}"> View Full Details</a></button>
-        </form>
-      </div>
+      <p>{{video.title}}</p>
+      <p>"{{video.description}}"</p>
+    </div>
+    <div>
+      <form action="/videos/{{ video.id }}/delete" method="post">
+        <button>Delete</button>
+        <button><a href="/videos/{{video.id}}"> View Full Details</a></button>
+      </form>
     </div>
   </div>
   {% endfor %}
