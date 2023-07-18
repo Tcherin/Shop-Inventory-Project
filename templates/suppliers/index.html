@@ -12,14 +12,16 @@
 {% endblock stylesheet %} {% block content %}
 
 <header>
-  <h1>Supplier List</h1>
+  <h1 class="page-title">Supplier List</h1>
 </header>
-<section class="filter">
-  <form action="/filtersuppliers" method="post">
-    Filter by Supplier:
-    <input name="supplier_name" type="text" />
-    <button><input type="submit" /></button>
-  </form>
+<section class="filter-container">
+  <section class="filter">
+    <form action="/filtersuppliers" method="post">
+      Filter by Supplier:
+      <input name="supplier_name" type="text" />
+      <button><input type="submit" /></button>
+    </form>
+  </section>
 </section>
 <section class="list">
   {% for supplier in all_suppliers %}

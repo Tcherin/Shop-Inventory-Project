@@ -14,29 +14,35 @@
 <header>
   <h1 class="page-title">Inventory List</h1>
 </header>
-<section class="filter">
-  <form action="/filtervideos" method="post">
-    Filter by Supplier:
-    <input name="supplier_name" type="text" />
-    <button><input type="submit" /></button>
-  </form>
-  <form action="/filtergenre" method="post">
-    Filter by Genre:
-    <input name="video_genre" type="text" />
-    <button><input type="submit" /></button>
-  </form>
+<section class="filter-container">
+  <section class="filter">
+    <form action="/filtervideos" method="post">
+      Filter by Supplier:
+      <input name="supplier_name" type="text" />
+      <button><input type="submit" /></button>
+    </form>
+    <form action="/filtergenre" method="post">
+      Filter by Genre:
+      <input name="video_genre" type="text" />
+      <button><input type="submit" /></button>
+    </form>
+  </section>
 </section>
 <section class="list">
   {% for video in all_videos %}
   <div class="item">
     <div>
       <p class="title">{{video.title}}</p>
-      <p class="description">
-        Meryl's Take - <br /><br />"{{video.description}}"
-      </p>
+      <p class="description">"{{video.description}}"</p>
       <div class="stock-info">
         <p>Genre: {{video.genre}}</p>
+        {% if video.stock_quantity >= 5 %}
         <p>Stock Quantity: {{video.stock_quantity}}</p>
+        {% elif video.stock_quantity <= 4 and video.stock_quantity != 0 %}
+        <p>Stock Quantity: {{video.stock_quantity}} (Low Stock)</p>
+        {% elif video.stock_quantity == 0 %}
+        <p>Stock Quantity: {{video.stock_quantity}} (Out of Stock)</p>
+        {% endif %}
         <p>Buying Price: ${{video.buying_cost}}</p>
         <p>Renting Price: ${{video.selling_price}}</p>
       </div>
@@ -44,7 +50,7 @@
     <div>
       <form action="/videos/{{ video.id }}/delete" method="post">
         <button>Delete</button>
-        <button><a href="/videos/{{video.id}}"> View Full Details</a></button>
+        <button><a href="/videos/{{video.id}}/edit">Edit</a></button>
       </form>
     </div>
   </div>
