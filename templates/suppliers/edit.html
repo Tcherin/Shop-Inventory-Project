@@ -2,23 +2,23 @@
 
 {% block stylesheet %}
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='base.css')}}"/>
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='edit.css')}}"/>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='new-edit.css')}}"/>
 {% endblock stylesheet %}
 
 {% block content %}
 
-<form action="/suppliers/{{supplier.id}}" method="post">
-    <section>
-      <section>
-          <div>
+<h1 class="page-title">Edit a Supplier</h1>
+<form class="form-container" action="/suppliers/{{supplier.id}}" method="post">
+      <section class="form">
+          <div class="form-item">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" value="{{supplier.name}}" required autofocus>
          </div>
-          <div>
+          <div class="form-item">
             <label for="contact_number">Contact number:</label>
             <input type="text" id="contact_number" name="contact_number" value="{{supplier.contact_number}}" required>
           </div>
-          <div>
+          <div class="form-item">
             <label for="activity">Activity Status:</label>
             <select name="activity">
               <option value="true"
@@ -31,8 +31,9 @@
               </option>
             </select>
           </div>
+          <div class="form-button">
       <button type="submit">Update Supplier</button>
-    </section>
+      </div>
   </section>
 </form>
 

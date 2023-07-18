@@ -14,6 +14,14 @@
 }
 
 .form-item {
+  display: flex;
+  justify-content: space-between;
   text-align: center;
   padding: 10px;
+  width: 280px;
+}
+
+.form-button {
+  display: flex;
+  justify-content: center;
 }

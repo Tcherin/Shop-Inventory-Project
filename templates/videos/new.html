@@ -7,7 +7,7 @@
 <link
   rel="stylesheet"
   type="text/css"
-  href="{{ url_for('static', filename='new.css')}}"
+  href="{{ url_for('static', filename='new-edit.css')}}"
 />
 {% endblock stylesheet %} {% block content %}
 <header>
@@ -46,14 +46,14 @@
       <input type="number" name="selling_price" required />
     </div>
     <div class="form-item">
-      <label for="supplier">supplier:</label>
+      <label for="supplier">Supplier:</label>
       <select name="supplier_id">
         {% for supplier in all_suppliers %} {% if supplier.activity == True %}
         <option value="{{ supplier.id }}">{{ supplier.name }}</option>
         {% endif %} {% endfor %}
       </select>
     </div>
-    <div class="form-item">
+    <div class="form-button">
       <button type="submit">Add Video</button>
     </div>
   </section>
