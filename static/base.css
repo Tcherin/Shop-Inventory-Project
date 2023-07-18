@@ -1,6 +1,7 @@
 body {
   background-color: #4584b1;
   color: white;
+  min-height: 660px;
 }
 
 .navbar {
@@ -10,12 +11,24 @@ body {
   margin-right: 1em;
 }
 
+.page-title {
+  font-size: 75px;
+}
+
 button {
   all: unset;
   background-color: #4584b1;
   border-radius: 5px;
   border: 3px solid silver;
   padding: 3px;
+}
+
+button:hover {
+  scale: 110%;
+}
+
+button:active {
+  scale: 90%;
 }
 
 button > input {

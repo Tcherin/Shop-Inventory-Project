@@ -12,7 +12,7 @@
 {% endblock stylesheet %} {% block content %}
 
 <header>
-  <h1>Inventory List</h1>
+  <h1 class="page-title">Inventory List</h1>
 </header>
 <section class="filter">
   <form action="/filtervideos" method="post">
@@ -30,8 +30,16 @@
   {% for video in all_videos %}
   <div class="item">
     <div>
-      <p>{{video.title}}</p>
-      <p>"{{video.description}}"</p>
+      <p class="title">{{video.title}}</p>
+      <p class="description">
+        Meryl's Take - <br /><br />"{{video.description}}"
+      </p>
+      <div class="stock-info">
+        <p>Genre: {{video.genre}}</p>
+        <p>Stock Quantity: {{video.stock_quantity}}</p>
+        <p>Buying Price: ${{video.buying_cost}}</p>
+        <p>Renting Price: ${{video.selling_price}}</p>
+      </div>
     </div>
     <div>
       <form action="/videos/{{ video.id }}/delete" method="post">
