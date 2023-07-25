@@ -1,11 +1,24 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %} {% block stylesheet %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='base.css')}}"
+/>
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='landing.css')}}"
+/>
+{% endblock stylesheet %} {% block content %}
 <body>
-  <header>
-    <div class="page-title">
-      <h1>The good ol' fashioned VHS Depository</h1>
-    </div>
-    <div class="page-subtitle">
-      <h2>Proudly the last Video Store in Existence!</h2>
+  <header class="landing-container">
+    <div class="landing-card">
+      <div class="landing-title">
+        <h1>The good ol' fashioned VHS Depository</h1>
+      </div>
+      <div class="landing-subtitle">
+        <h2>Proudly the last Video Store in Existence!</h2>
+      </div>
     </div>
   </header>
 </body>

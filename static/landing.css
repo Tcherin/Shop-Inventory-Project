@@ -1,1 +1,14 @@
+.landing-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.landing-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.landing-title {
+  font-size: 20px;
+}
